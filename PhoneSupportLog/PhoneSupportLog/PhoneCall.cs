@@ -8,7 +8,6 @@ namespace PhoneSupportLog
 {
     public class PhoneCall
     {
-        public int CallId { get; set; }
         public string DateTime { get; set; }
         public string Name { get; set; }
         public string Company { get; set; }
@@ -20,9 +19,8 @@ namespace PhoneSupportLog
         public bool Reception { get; set; }
         public string Comments { get; set; }
 
-        public PhoneCall(int callId, string dateTime, string name, string company, string phone, string product, int callLength, string resolved, int jira, bool reception, string comments)
+        public PhoneCall(string dateTime, string name, string company, string phone, string product, int callLength, string resolved, int jira, bool reception, string comments)
         {
-            CallId = callId;
             DateTime = dateTime;
             Name = name;
             Company = company;
