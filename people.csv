@@ -1,0 +1,2 @@
+CallId, DateTime, Name, Company, Phone, Product, CallLength, Resolved, JIRA, Reception, Comments
+1, 16/12/2018 - 16:15, Troy, Radfords,221998021, KiwiPlus,15, N/A,6134, False, Asking for help with KiwiPlus
