@@ -18,11 +18,11 @@ namespace PhoneSupportLog
 
             using (var writer = new StreamWriter(path))
             {
-                writer.WriteLine(string.Join(", ", props.Select(p => p.Name)));
+                writer.WriteLine(string.Join(",", props.Select(p => p.Name)));
 
                 foreach (var item in items)
                 {
-                    writer.WriteLine(string.Join(", ", props.Select(p => p.GetValue(item, null))));
+                    writer.WriteLine(string.Join(",", props.Select(p => p.GetValue(item, null))));
                 }
             }
         }
@@ -33,23 +33,10 @@ namespace PhoneSupportLog
         {
             var lines = System.IO.File.ReadAllLines(path).Skip(1);
 
-            foreach (string item in lines)
+            foreach (var item in lines)
             {
                 var values = item.Split(',');
-
-                phoneCalls.Add(new PhoneCall()
-                {
-                    DateTime = values[0],
-                    Name = values[1],
-                    Company = values[2],
-                    Phone = values[3],
-                    Product = values[4],
-                    CallLength = int.Parse(values[5]),
-                    Resolved = values[6],
-                    JIRA = int.Parse(values[7]),
-                    Reception = bool.Parse(values[8]),
-                    Comments = values[9]
-                });
+                phoneCalls.Add(new PhoneCall(values[0], values[1], values[2], values[3], values[4], int.Parse(values[5]), values[6], int.Parse(values[7]),bool.Parse(values[8]),values[9]));
             }
         }
     }

@@ -1,3 +1,4 @@
 DateTime, Name, Company, Phone, Product, CallLength, Resolved, JIRA, Reception, Comments
-7/12/2018 1:25:28 PM, troy, radfords, 123456, kiwiplus, 5, yes, 123, False, bug in kiwiplus
-7/12/2018 1:25:56 PM, bob, eastpack, 546765, freshpack, 5, no, 546434, True, bug in freshpack
+7/12/2018 1:25:28 PM,troy,radfords,123456,kiwiplus,5,yes,123,False,bug in kiwiplus
+7/12/2018 1:25:56 PM,bob,eastpack,546765,freshpack,5,no,546434,True,bug in freshpack
+7/12/2018 4:11:50 PM,ian,apata,43243,freshcool,43,no,3424,True,fdjsigjfkdg

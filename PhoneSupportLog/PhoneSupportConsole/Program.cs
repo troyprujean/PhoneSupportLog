@@ -13,7 +13,7 @@ namespace PhoneSupportConsole
         static void Main(string[] args)
         {
             Methods.ReadCSV(phoneCalls, @"C:\Users\PrujeanT\Desktop\PhoneSupportLog\SupportPhoneLog.csv");
-            int mainMenuChoice;
+            ConsoleKeyInfo mainMenuChoice;
             do
             {
                 Console.Clear();
@@ -23,25 +23,27 @@ namespace PhoneSupportConsole
                 Console.WriteLine("1. Log a call");
                 Console.WriteLine("2. View log");
                 Console.WriteLine("3. Exit");
-                mainMenuChoice = int.Parse(Console.ReadLine());
-                switch (mainMenuChoice)
+                mainMenuChoice = Console.ReadKey();
+                switch (mainMenuChoice.KeyChar)
                 {
-                    case 1:
+                    case '1':
                         LogCall();
                         Methods.WriteCSV(phoneCalls, @"C:\Users\PrujeanT\Desktop\PhoneSupportLog\SupportPhoneLog.csv");
                         break;
-                    case 2:
+                    case '2':
                         DisplayCalls();
                         break;
-                    case 3:
+                    case '3':
                         return;
                     default:
                         Console.Clear();
                         Console.WriteLine("Please enter a valid choice (1 - 3)");
+                        Console.WriteLine("Press enter to continue");
+                        Console.ReadLine();
                         break;
                 }
             }
-            while (mainMenuChoice != 3);
+            while (mainMenuChoice.KeyChar != '3');
         }
         
         public static void LogCall()
@@ -66,7 +68,7 @@ namespace PhoneSupportConsole
             bool reception = bool.Parse(Console.ReadLine());
             Console.Write("Comments: ");
             string comments = Console.ReadLine();
-            //Add calls to list
+            //Instantiate object with user input arguments then add it to the list
             phoneCalls.Add(new PhoneCall(DateTime.Now.ToString(), name, company, phone, product, callLength, resolved, JIRA, reception, comments));
             Console.WriteLine("-------------------------------------------------");
             Console.WriteLine("Call Logged!");
@@ -81,16 +83,16 @@ namespace PhoneSupportConsole
             Console.WriteLine("-------------------------------------------------");
             foreach (var call in phoneCalls)
             {
-                Console.WriteLine($"Date & Time:   {call.DateTime}");
-                Console.WriteLine($"Name:          {call.Name}");
-                Console.WriteLine($"Company:       {call.Company}");
-                Console.WriteLine($"Phone:         {call.Phone}");
-                Console.WriteLine($"Product:       {call.DateTime}");
-                Console.WriteLine($"Call Length:   {call.DateTime} mins.");
-                Console.WriteLine($"Resolved?:     {call.Resolved}");
-                Console.WriteLine($"JIRA Ticket:   {call.JIRA}");
-                Console.WriteLine($"Reception?:    {call.Reception}");
-                Console.WriteLine($"Comments:      {call.Comments}");
+                Console.WriteLine($"Date & Time: {call.DateTime}");
+                Console.WriteLine($"Name: {call.Name}");
+                Console.WriteLine($"Company: {call.Company}");
+                Console.WriteLine($"Phone: {call.Phone}");
+                Console.WriteLine($"Product: {call.Product}");
+                Console.WriteLine($"Call Length: {call.CallLength} mins.");
+                Console.WriteLine($"Resolved?: {call.Resolved}");
+                Console.WriteLine($"JIRA Ticket: {call.JIRA}");
+                Console.WriteLine($"Reception?: {call.Reception}");
+                Console.WriteLine($"Comments: {call.Comments}");
                 Console.WriteLine("-------------------------------------------------");
             }
             Console.Write("Press enter to continue");
