@@ -26,5 +26,31 @@ namespace PhoneSupportLog
                 }
             }
         }
+
+
+        // Generic method to read from list
+        public static void ReadCSV(List<PhoneCall> phoneCalls, string path)
+        {
+            var lines = System.IO.File.ReadAllLines(path).Skip(1);
+
+            foreach (string item in lines)
+            {
+                var values = item.Split(',');
+
+                phoneCalls.Add(new PhoneCall()
+                {
+                    DateTime = values[0],
+                    Name = values[1],
+                    Company = values[2],
+                    Phone = values[3],
+                    Product = values[4],
+                    CallLength = int.Parse(values[5]),
+                    Resolved = values[6],
+                    JIRA = int.Parse(values[7]),
+                    Reception = bool.Parse(values[8]),
+                    Comments = values[9]
+                });
+            }
+        }
     }
 }

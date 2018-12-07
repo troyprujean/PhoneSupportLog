@@ -12,7 +12,7 @@ namespace PhoneSupportConsole
         public static List<PhoneCall> phoneCalls = new List<PhoneCall>();
         static void Main(string[] args)
         {
-            //Method to load csv file into phoneCall list
+            Methods.ReadCSV(phoneCalls, @"C:\Users\PrujeanT\Desktop\PhoneSupportLog\SupportPhoneLog.csv");
             int mainMenuChoice;
             do
             {
@@ -28,10 +28,10 @@ namespace PhoneSupportConsole
                 {
                     case 1:
                         LogCall();
-                        Methods.WriteCSV(phoneCalls, @"C:\Users\PrujeanT\Desktop\PhoneSupportLog\people.csv");
+                        Methods.WriteCSV(phoneCalls, @"C:\Users\PrujeanT\Desktop\PhoneSupportLog\SupportPhoneLog.csv");
                         break;
                     case 2:
-                        //Method to output the list
+                        DisplayCalls();
                         break;
                     case 3:
                         return;
@@ -68,8 +68,31 @@ namespace PhoneSupportConsole
             string comments = Console.ReadLine();
             //Add calls to list
             phoneCalls.Add(new PhoneCall(DateTime.Now.ToString(), name, company, phone, product, callLength, resolved, JIRA, reception, comments));
-            Console.Write("-------------------------------------------------");
-            Console.Write("Call Logged!");
+            Console.WriteLine("-------------------------------------------------");
+            Console.WriteLine("Call Logged!");
+            Console.WriteLine("Press enter to continue");
+            Console.ReadLine();
+        }
+
+        public static void DisplayCalls()
+        {
+            Console.Clear();
+            Console.WriteLine($"Phone calls logged as of {DateTime.Now}");
+            Console.WriteLine("-------------------------------------------------");
+            foreach (var call in phoneCalls)
+            {
+                Console.WriteLine($"Date & Time:   {call.DateTime}");
+                Console.WriteLine($"Name:          {call.Name}");
+                Console.WriteLine($"Company:       {call.Company}");
+                Console.WriteLine($"Phone:         {call.Phone}");
+                Console.WriteLine($"Product:       {call.DateTime}");
+                Console.WriteLine($"Call Length:   {call.DateTime} mins.");
+                Console.WriteLine($"Resolved?:     {call.Resolved}");
+                Console.WriteLine($"JIRA Ticket:   {call.JIRA}");
+                Console.WriteLine($"Reception?:    {call.Reception}");
+                Console.WriteLine($"Comments:      {call.Comments}");
+                Console.WriteLine("-------------------------------------------------");
+            }
             Console.Write("Press enter to continue");
             Console.ReadLine();
         }
