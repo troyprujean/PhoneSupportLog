@@ -11,18 +11,18 @@ namespace PhoneSupportLog
     public class Methods
     {
         // Generic method to store list objects in a csv file
-        public static void WriteCSV<T>(IEnumerable<T> items, string path)
+        public static void WriteCSV(List<PhoneCall> phoneCalls, string path)
         {
-            Type itemType = typeof(T);
+            Type itemType = typeof(PhoneCall);
             var props = itemType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
 
             using (var writer = new StreamWriter(path))
             {
                 writer.WriteLine(string.Join(",", props.Select(p => p.Name)));
 
-                foreach (var item in items)
+                foreach (var phoneCall in phoneCalls)
                 {
-                    writer.WriteLine(string.Join(",", props.Select(p => p.GetValue(item, null))));
+                    writer.WriteLine(string.Join(",", props.Select(p => p.GetValue(phoneCall, null))));
                 }
             }
         }

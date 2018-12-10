@@ -30,21 +30,13 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tblOuter = new System.Windows.Forms.TableLayoutPanel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lbxDisplay = new System.Windows.Forms.ListBox();
             this.phoneCallBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dateTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.productDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.callLengthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resolvedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jIRADataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.receptionDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.commentsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tblTop = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDisplayCalls = new System.Windows.Forms.Button();
             this.tblOuter.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneCallBindingSource)).BeginInit();
+            this.tblTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // tblOuter
@@ -52,114 +44,68 @@
             this.tblOuter.ColumnCount = 1;
             this.tblOuter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblOuter.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblOuter.Controls.Add(this.dataGridView1, 0, 1);
+            this.tblOuter.Controls.Add(this.lbxDisplay, 0, 1);
+            this.tblOuter.Controls.Add(this.tblTop, 0, 0);
             this.tblOuter.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tblOuter.Location = new System.Drawing.Point(0, 0);
             this.tblOuter.Name = "tblOuter";
             this.tblOuter.RowCount = 2;
             this.tblOuter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tblOuter.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tblOuter.Size = new System.Drawing.Size(984, 461);
+            this.tblOuter.Size = new System.Drawing.Size(1092, 461);
             this.tblOuter.TabIndex = 0;
             // 
-            // dataGridView1
+            // lbxDisplay
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dateTimeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.companyDataGridViewTextBoxColumn,
-            this.phoneDataGridViewTextBoxColumn,
-            this.productDataGridViewTextBoxColumn,
-            this.callLengthDataGridViewTextBoxColumn,
-            this.resolvedDataGridViewTextBoxColumn,
-            this.jIRADataGridViewTextBoxColumn,
-            this.receptionDataGridViewCheckBoxColumn,
-            this.commentsDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.phoneCallBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 233);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(978, 225);
-            this.dataGridView1.TabIndex = 0;
+            this.lbxDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbxDisplay.FormattingEnabled = true;
+            this.lbxDisplay.Location = new System.Drawing.Point(3, 233);
+            this.lbxDisplay.Name = "lbxDisplay";
+            this.lbxDisplay.Size = new System.Drawing.Size(1086, 225);
+            this.lbxDisplay.TabIndex = 0;
+            this.lbxDisplay.SelectedValueChanged += new System.EventHandler(this.lbxDisplay_SelectedValueChanged);
             // 
             // phoneCallBindingSource
             // 
             this.phoneCallBindingSource.DataSource = typeof(PhoneSupportLog.PhoneCall);
             // 
-            // dateTimeDataGridViewTextBoxColumn
+            // tblTop
             // 
-            this.dateTimeDataGridViewTextBoxColumn.DataPropertyName = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.HeaderText = "DateTime";
-            this.dateTimeDataGridViewTextBoxColumn.Name = "dateTimeDataGridViewTextBoxColumn";
+            this.tblTop.ColumnCount = 2;
+            this.tblTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblTop.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblTop.Controls.Add(this.btnDisplayCalls, 1, 0);
+            this.tblTop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblTop.Location = new System.Drawing.Point(3, 3);
+            this.tblTop.Name = "tblTop";
+            this.tblTop.RowCount = 1;
+            this.tblTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblTop.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tblTop.Size = new System.Drawing.Size(1086, 224);
+            this.tblTop.TabIndex = 1;
             // 
-            // nameDataGridViewTextBoxColumn
+            // btnDisplayCalls
             // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // companyDataGridViewTextBoxColumn
-            // 
-            this.companyDataGridViewTextBoxColumn.DataPropertyName = "Company";
-            this.companyDataGridViewTextBoxColumn.HeaderText = "Company";
-            this.companyDataGridViewTextBoxColumn.Name = "companyDataGridViewTextBoxColumn";
-            // 
-            // phoneDataGridViewTextBoxColumn
-            // 
-            this.phoneDataGridViewTextBoxColumn.DataPropertyName = "Phone";
-            this.phoneDataGridViewTextBoxColumn.HeaderText = "Phone";
-            this.phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
-            // 
-            // productDataGridViewTextBoxColumn
-            // 
-            this.productDataGridViewTextBoxColumn.DataPropertyName = "Product";
-            this.productDataGridViewTextBoxColumn.HeaderText = "Product";
-            this.productDataGridViewTextBoxColumn.Name = "productDataGridViewTextBoxColumn";
-            // 
-            // callLengthDataGridViewTextBoxColumn
-            // 
-            this.callLengthDataGridViewTextBoxColumn.DataPropertyName = "CallLength";
-            this.callLengthDataGridViewTextBoxColumn.HeaderText = "CallLength";
-            this.callLengthDataGridViewTextBoxColumn.Name = "callLengthDataGridViewTextBoxColumn";
-            // 
-            // resolvedDataGridViewTextBoxColumn
-            // 
-            this.resolvedDataGridViewTextBoxColumn.DataPropertyName = "Resolved";
-            this.resolvedDataGridViewTextBoxColumn.HeaderText = "Resolved";
-            this.resolvedDataGridViewTextBoxColumn.Name = "resolvedDataGridViewTextBoxColumn";
-            // 
-            // jIRADataGridViewTextBoxColumn
-            // 
-            this.jIRADataGridViewTextBoxColumn.DataPropertyName = "JIRA";
-            this.jIRADataGridViewTextBoxColumn.HeaderText = "JIRA";
-            this.jIRADataGridViewTextBoxColumn.Name = "jIRADataGridViewTextBoxColumn";
-            // 
-            // receptionDataGridViewCheckBoxColumn
-            // 
-            this.receptionDataGridViewCheckBoxColumn.DataPropertyName = "Reception";
-            this.receptionDataGridViewCheckBoxColumn.HeaderText = "Reception";
-            this.receptionDataGridViewCheckBoxColumn.Name = "receptionDataGridViewCheckBoxColumn";
-            // 
-            // commentsDataGridViewTextBoxColumn
-            // 
-            this.commentsDataGridViewTextBoxColumn.DataPropertyName = "Comments";
-            this.commentsDataGridViewTextBoxColumn.HeaderText = "Comments";
-            this.commentsDataGridViewTextBoxColumn.Name = "commentsDataGridViewTextBoxColumn";
+            this.btnDisplayCalls.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnDisplayCalls.Location = new System.Drawing.Point(777, 198);
+            this.btnDisplayCalls.Name = "btnDisplayCalls";
+            this.btnDisplayCalls.Size = new System.Drawing.Size(75, 23);
+            this.btnDisplayCalls.TabIndex = 2;
+            this.btnDisplayCalls.Text = "Display Calls";
+            this.btnDisplayCalls.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 461);
+            this.ClientSize = new System.Drawing.Size(1092, 461);
             this.Controls.Add(this.tblOuter);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phone Support Log";
             this.tblOuter.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.phoneCallBindingSource)).EndInit();
+            this.tblTop.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -167,18 +113,10 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tblOuter;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn companyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn productDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn callLengthDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn resolvedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn jIRADataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn receptionDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn commentsDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource phoneCallBindingSource;
+        private System.Windows.Forms.ListBox lbxDisplay;
+        private System.Windows.Forms.TableLayoutPanel tblTop;
+        private System.Windows.Forms.Button btnDisplayCalls;
     }
 }
 

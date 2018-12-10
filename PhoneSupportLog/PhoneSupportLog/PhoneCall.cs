@@ -32,5 +32,10 @@ namespace PhoneSupportLog
             Reception = reception;
             Comments = comments;
         }
+
+        public string GetPhoneCall()
+        {
+            return $"{DateTime}\t{Name}\t{Company}\t{Phone}\t{Product}\t{CallLength}\t{Resolved}\t{JIRA}\t{Reception}\t{Comments}";
+        }
     }
 }
