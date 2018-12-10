@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFInterface", "WpfApp1\WPF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneSupportConsole", "PhoneSupportConsole\PhoneSupportConsole.csproj", "{DB27C0D1-F62F-48B1-99F2-FE274BE412EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PhoneSupportWindowsForms", "PhoneSupportWindowsForms\PhoneSupportWindowsForms.csproj", "{0F0F8CC9-7BAC-480D-975A-A1DCCC4EE682}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{DB27C0D1-F62F-48B1-99F2-FE274BE412EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DB27C0D1-F62F-48B1-99F2-FE274BE412EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DB27C0D1-F62F-48B1-99F2-FE274BE412EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0F8CC9-7BAC-480D-975A-A1DCCC4EE682}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0F8CC9-7BAC-480D-975A-A1DCCC4EE682}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0F8CC9-7BAC-480D-975A-A1DCCC4EE682}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0F8CC9-7BAC-480D-975A-A1DCCC4EE682}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,9 +32,5 @@ namespace PhoneSupportLog
             Reception = reception;
             Comments = comments;
         }
-
-        public PhoneCall()
-        {
-        }
     }
 }
